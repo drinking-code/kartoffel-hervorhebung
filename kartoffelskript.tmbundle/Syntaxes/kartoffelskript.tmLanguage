@@ -14,6 +14,24 @@
 	<key>patterns</key>
 	<array>
 		<dict>
+			<key>match</key>
+			<string>(wahr|falsch)</string>
+			<key>name</key>
+			<string>constant.language.kartoffel</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(nicht|und|oder)</string>
+			<key>name</key>
+			<string>keyword.operator.kartoffel</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(mod)</string>
+			<key>name</key>
+			<string>keyword.operator.kartoffel</string>
+		</dict>
+		<dict>
 			<key>begin</key>
 			<string>Sei\s</string>
 			<key>beginCaptures</key>
@@ -32,11 +50,23 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>((der|die|das)\s)?\w+</string>
+					<string>\b(?:(?!(der|die|das))\S)+\b</string>
 					<key>name</key>
 					<string>entity.name.tag.kartoffel</string>
 				</dict>
 			</array>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>ist(?=\seine?)</string>
+			<key>name</key>
+			<string>keyword.operator.kartoffel</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>((Ganz|Gleitkomma)zahl|Zeichen(kette)?|Aussage)(-Feld)?</string>
+			<key>name</key>
+			<string>variable.parameter.kartoffel</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -51,17 +81,48 @@
 			<string>comment.line.kartoffel</string>
 		</dict>
 		<dict>
+			<key>match</key>
+			<string>der Größe</string>
+			<key>name</key>
+			<string>keyword.control.kartoffel</string>
+		</dict>
+		<dict>
 			<key>begin</key>
 			<string>Setze\s</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>storage.modifier.kartoffel</string>
+				</dict>
+			</dict>
 			<key>end</key>
 			<string>\sauf</string>
 			<key>name</key>
-			<string>storage.modifier.kartoffel</string>
+			<string>markup.other.kartoffel</string>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>match</key>
-					<string>((der|die|das)\s)?\w+</string>
+					<string>\b(?:(?!(den|die|das))\S)+\b</string>
+					<key>name</key>
+					<string>support.variable.kartoffel</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>(der|die|das|des|dem|ein)\s</string>
+			<key>end</key>
+			<string>\s</string>
+			<key>name</key>
+			<string>markup.other.kartoffel</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>(leeres Feld|[^\s:]+)</string>
 					<key>name</key>
 					<string>support.variable.kartoffel</string>
 				</dict>
@@ -70,27 +131,29 @@
 		<dict>
 			<key>begin</key>
 			<string>(Erhöhe|Verringere)\s</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>storage.modifier.kartoffel</string>
+				</dict>
+			</dict>
 			<key>comment</key>
 			<string>ausschließlich numerische Variablen</string>
 			<key>end</key>
 			<string>\sum</string>
 			<key>name</key>
-			<string>storage.modifier.kartoffel</string>
+			<string>markup.other.kartoffel</string>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>match</key>
-					<string>((der|die|das)\s)?\w+</string>
+					<string>\b(?:(?!(den|die|das))\S)+\b</string>
 					<key>name</key>
 					<string>support.variable.kartoffel</string>
 				</dict>
 			</array>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>((Ganz|Gleitkomma)zahl|Zeichen(kette)?|Aussage)(-Feld)?</string>
-			<key>name</key>
-			<string>support.type.kartoffel</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -106,19 +169,13 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>["'][a-zA-Z\s\.]+["']</string>
+			<string>["'][\s\S]+["']</string>
 			<key>name</key>
 			<string>constant.character.kartoffel</string>
 		</dict>
 		<dict>
-			<key>match</key>
-			<string>wahr|falsch</string>
-			<key>name</key>
-			<string>constant.language.kartoffel</string>
-		</dict>
-		<dict>
 			<key>begin</key>
-			<string>Führe den Block</string>
+			<string>[Ff]ühre den Block</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
@@ -139,6 +196,12 @@
 			</dict>
 			<key>name</key>
 			<string>markup.other.kartoffel</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(größer als|kleiner als|größer gleich|kleiner gleich|gleich|ungleich)</string>
+			<key>name</key>
+			<string>keyword.operator.kartoffel</string>
 		</dict>
 	</array>
 	<key>scopeName</key>
