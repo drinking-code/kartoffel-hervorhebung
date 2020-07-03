@@ -1,4 +1,4 @@
-# Kartoffel Hervorhebung
+# Kartoffel-Hervorhebung
 
 ### Was ist KartoffelSkript? (German)
 [KartoffelSkript](https://github.com/JohnnyJayJay/kartoffelskript) ist eine auf Deutsch basierende Skriptsprache – entwickelt von [JohnnyJayJay](https://github.com/JohnnyJayJay). Dieses Projektarchiv baut auf die Spezifikation auf und stellt ein `.tmbundle` zur Syntax-Hervorhebung von KartoffelSkript in TextMate und vielen anderen Textaufbereitern / integrierte Entwicklungsumgebungen bereit.
