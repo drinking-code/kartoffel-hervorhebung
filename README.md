@@ -11,7 +11,7 @@
 [Originale Spezifikation — original specification](https://github.com/JohnnyJayJay/kartoffelskript/blob/master/spezifikation.md) (German)
 
 ## Abweichungen (German)
-### `die eine ... die andere`
+#### `die eine ... die andere`
 Bitte beachte, dass in dieser Ausführung der Syntax-Hervorhebung von KartoffelSkript Variablen keine Leerzeichen enthalten können. Deshalb ist das folgende, in der originalen Spezifikation aufgeführte Beispiel nicht gültig:
 ```kartoffel
 Sei die eine Bedingung eine Aussage mit dem Wert wahr.
@@ -19,7 +19,7 @@ Sei die andere Bedingung eine Aussage mit dem Wert falsch.
 ```
 
 ## Deviations (Englisch)
-### `die eine ... die andere`
+#### `die eine ... die andere`
 Please notice that variables must not contain spaces in this version of syntax-highlighting for KartoffelSkript. Therefore, the following example listed in the original specification is not valid:
 ```kartoffel
 Sei die eine Bedingung eine Aussage mit dem Wert wahr.
