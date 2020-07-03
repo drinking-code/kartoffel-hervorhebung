@@ -1,0 +1,69 @@
+Sei x eine Ganzzahl.
+Setze x auf 0.
+Erhöhe x um 1. #boo
+Verringere x um 1.
+
+Sei x eine Ganzzahl mit dem Wert -765443.
+Sei Pi eine Gleitkommazahl mit dem Wert 3,14159.
+Sei der Buchstabe ein Zeichen mit dem Wert 'X'.
+Sei das Grußwort eine Zeichenkette mit dem Wert "Hallo. Sei b ein Zeichen".
+Sei die Bedingung eine Aussage mit dem Wert wahr.
+
+Sei das Grußwort eine Zeichenkette mit dem Wert "Hallo".
+Sei der Name eine Zeichenkette mit dem Wert "Johnny".
+
+Sei die Begrüßung eine Zeichenkette.
+Setze die Begrüßung auf das Grußwort + ", " + den Namen.
+
+Sei das Array ein Ganzzahl-Feld.
+Setze das Array auf ein leeres Feld der Größe 5.
+
+Führe den Block {
+	Sei x eine Ganzzahl mit dem Wert -765443.
+	Sei Pi eine Gleitkommazahl mit dem Wert 3,14159.
+	Sei der Buchstabe ein Zeichen mit dem Wert 'X'.
+	Sei das Grußwort eine Zeichenkette mit dem Wert "Hallo. Sei b ein Zeichen".
+	Sei die Bedingung eine Aussage mit dem Wert wahr.
+} aus.
+
+Sei die Wahrheit eine Aussage.
+Setze die Wahrheit auf die Aussage 5 ist gleich 5.
+Setze die Wahrheit auf die Aussage 3 ist ungleich 5.
+
+Sei der Name eine Zeichenkette mit dem Wert "Lena".
+Sei die Bedingung eine Aussage mit dem Wert der Aussage "Lena" ist gleich dem Namen.
+
+Sei w eine Aussage.
+Setze w auf die Aussage 4 ist kleiner gleich 5.
+Setze w auf die Aussage 5 ist größer als 10.
+
+Sei w eine Aussage.
+Setze w auf die Aussage wahr und falsch.  # w = falsch
+Setze w auf die Aussage wahr oder falsch. # w = wahr
+
+Sei w eine Aussage.
+Setze w auf die Aussage 5 ist größer als 4.       # w = wahr
+Setze w auf die Aussage 5 ist nicht größer als 4. # w = falsch
+
+Setze die Summe auf 2 + 3.
+Setze die Differenz auf 3 - 2.
+Setze das Produkt auf 2 * 3.
+Setze den Quotienten auf 6 / 3.
+Setze den Rest auf 10 mod 3.
+
+Sei der Text eine Zeichenkette mit dem Wert "42".
+Sei der Zahlenwert eine Ganzzahl mit dem Wert des Textes als Ganzzahl.
+
+Sei w eine Aussage.
+Setze w auf die Aussage: "3" ist eine Ganzzahl.
+
+Sei die Bedingung1 eine Aussage mit dem Wert wahr.
+Sei die Bedingung2 eine Aussage mit dem Wert falsch.
+
+Sei x eine Ganzzahl.
+
+Wenn die Bedingung1 wahr ist, setze x auf 0.
+Wenn die Bedingung2 wahr ist, führe den Block {
+    Setze x auf y.
+    Erhöhe x um 3.
+} aus.

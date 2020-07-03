@@ -1,58 +1,28 @@
-1. Allgemein
-
-2. Variablen
-
-3. Datentypen
-
-   1. Ganzzahl
-
-   2. Fließkommazahl
-
-   3. Zeichen
-
-   4. Zeichenkette
-
-   5. Wahrheitswert
-
-4. Felder (Arrays)
-
-5. Blöcke
-
-6. Operationen
-
-   1. Vergleiche
-      1. (Un)gleichheit
-      2. Größer als, kleiner als
-      3. Logische Operationen
-   2. Arithmetische Operationen
-      1. Addition
-      2. Subtraktion
-      3. Multiplikation
-      4. Division
-      5. Divisionsrest
-   3. Umwandlung
-
-7. Kontrollstrukturen
-
-   1. Blöcke
-
-   2. if 
-
-   3. while
-
-   4. for
-
-8. Kommentare
-
-9. Funktionen
-
-   1. Native Funktionen
-      1. Ausgabe
-
-      2. Eingabe
-   2. Sonstige
-
-10. Fehler
+1. [Allgemein](#1-allgemein)
+2. [Variablen](#2-variablen)
+3. [Datentypen](#3-datentypen)
+   1. [Ganzzahl](#31-ganzzahl)
+   2. [Gleitkommazahl](#32-gleitkommazahl)
+   3. [Zeichen](#33-zeichen)
+   4. [Zeichenkette](#34-zeichenkette)
+   5. [Aussage](#35-aussage)
+4. [Felder (Arrays)](#4-felder-arrays)
+5. [Operationen](#5-operationen)
+   1. [Vergleiche](#51-vergleiche)
+      1. [(Un)gleichheit](#511-ungleichheit)
+      2. [Größer als, kleiner als](#512-grer-als-kleiner-als)
+      3. [Logische Operationen](#513-logische-operationen)
+   2. [Arithmetische Operationen](#52-arithmetische-operationen)
+      1. [Addition](#521-addition)
+      2. [Subtraktion](#522-subtraktion)
+      3. [Multiplikation](#523-multiplikation)
+      4. [Division](#524-division)
+      5. [Divisionsrest](#525-divisionsrest)
+   3. [Umwandlung](#53-umwandlung)
+6. [Kontrollstrukturen](#6-kontrollstrukturen)
+   1. [Blöcke](#61-blcke)
+   2. [if](#62-if)
+   3. [while](#63-while)
 
 # 1. Allgemein
 
@@ -234,27 +204,15 @@ Setze die Antwort auf Element 2 aus dem Array.
 
 Mit dem Ausdruck `die Größe von <Feld>` lässt sich die ganzzahlige Anzahl der Elemente eines Feldes holen.
 
-# 5. Blöcke
+# 5. Operationen
 
-Blöcke werden genutzt, um mehrere Anweisungen zu einer zusammenzufassen. Dies ist besonders für Kontrollstrukturen wichtig.
-
-Das Ausführen von Blöcken hat keinen Rückgabewert.
-
-```
-Führe den Block {
-    # Anweisungen
-} aus.
-```
-
-# 7. Operationen
-
-## 7.1. Vergleiche
+## 5.1. Vergleiche
 
 Vergleiche sind Operationen, die immer auf zwei Operanden mithilfe eines Operators angewendet werden und einen `Aussage` zurückgeben. Sie sind also Ausdrücke.
 
 Um einen Vergleich als Wert für den Typ `Aussage` zu nutzen, muss er das Präfix `<Artikel entsprechend des Falls> Aussage:` erhalten.
 
-### 7.1.1. (Un)gleichheit
+### 5.1.1. (Un)gleichheit
 
 Auf Gleich- und Ungleichheit wird mit den Operatoren `gleich` und `ungleich` geprüft.
 
@@ -271,7 +229,7 @@ Sei der Name eine Zeichenkette mit dem Wert "Lena".
 Sei die Bedingung eine Aussage mit dem Wert der Aussage "Lena" ist gleich dem Namen.
 ```
 
-### 7.1.2. Größer als, kleiner als
+### 5.1.2. Größer als, kleiner als
 
 Größer als hat in Kartoffelskript den Operator `größer als`, kleiner als den Operator `kleiner als`. Für inklusives < und > gibt es die Operatoren `kleiner gleich` und `größer gleich`.
 
@@ -281,7 +239,7 @@ Setze w auf die Aussage 4 ist kleiner gleich 5.
 Setze w auf die Aussage 5 ist größer als 10.
 ```
 
-### 7.1.3. Logische Operationen
+### 5.1.3. Logische Operationen
 
 Logische Operationen in Kartoffelskript beschränken sich auf die Operatoren `und` (AND), `oder` (OR) und `nicht` (NOT).  `oder` und `und` werden genutzt, um Aussagen miteinander zu verknüpfen:
 
@@ -299,11 +257,11 @@ Setze w auf die Aussage 5 ist größer als 4.       # w = wahr
 Setze w auf die Aussage 5 ist nicht größer als 4. # w = falsch
 ```
 
-## 7.2. Arithmetische Operationen
+## 5.2. Arithmetische Operationen
 
 Zu den arithmetischen Operationen gehören die 4 Grundoperationen plus, minus, mal und geteilt. Die Rechenregeln für diese werden beachtet (Punkt vor Strich) und Klammersetzung wird unterstützt.
 
-### 7.2.1. Addition
+### 5.2.1. Addition
 
 Um die Summe zweier Zahlenwerte zu erhalten, wird der Additionsoperator `+` genutzt.
 
@@ -311,7 +269,7 @@ Um die Summe zweier Zahlenwerte zu erhalten, wird der Additionsoperator `+` genu
 Setze die Summe auf 2 + 3.
 ```
 
-### 7.2.2. Subtraktion
+### 5.2.2. Subtraktion
 
 Um die Differenz zweier Zahlenwerte zu erhalten, wird der Subtraktionsoperator `-` genutzt.
 
@@ -319,7 +277,7 @@ Um die Differenz zweier Zahlenwerte zu erhalten, wird der Subtraktionsoperator `
 Setze die Differenz auf 3 - 2.
 ```
 
-### 7.2.3. Multiplikation
+### 5.2.3. Multiplikation
 
 Um das Produkt zweier Zahlenwerte zu erhalten, wird der Multiplikationsoperator `*`  genutzt.
 
@@ -327,7 +285,7 @@ Um das Produkt zweier Zahlenwerte zu erhalten, wird der Multiplikationsoperator 
 Setze das Produkt auf 2 * 3.
 ```
 
-### 7.2.4. Division
+### 5.2.4. Division
 
 Um den Quotienten zweier Zahlenwerte zu erhalten, wird der Divisionsoperator `/` genutzt.
 
@@ -337,7 +295,7 @@ Ist der Divisor des Ausdrucks = 0, so gibt es einen Fehler.
 Setze den Quotienten auf 6 / 3.
 ```
 
-### 7.2.5. Divisionsrest
+### 5.2.5. Divisionsrest
 
 Um den ganzzahligen Rest einer Division mit zwei Ganzzahlen zu erhalten, wird der Modulo-Operator `mod` genutzt.
 
@@ -345,7 +303,7 @@ Um den ganzzahligen Rest einer Division mit zwei Ganzzahlen zu erhalten, wird de
 Setze den Rest auf 10 mod 3.
 ```
 
-## 7.3. Umwandlung
+## 5.3. Umwandlung
 
 Wie bereits erwähnt, können die Datentypen `Ganzzahl`, `Fließkommazahl`, `Zeichen`, `Zeichenkette` und `Wahrheitswert` ineinander umgewandelt werden.
 
@@ -367,11 +325,23 @@ Sei w eine Aussage.
 Setze w auf die Aussage: "3" ist eine Ganzzahl.
 ```
 
-# 8. Kontrollstrukturen
+# 6. Kontrollstrukturen
 
 Kontrollstrukturen verändern den Programmfluss in Abhängigkeit von Bedingungen. 
 
-## 8.2. if
+## 6.1. Blöcke
+
+Blöcke werden genutzt, um mehrere Anweisungen zu einer zusammenzufassen. Dies ist besonders für Kontrollstrukturen wichtig.
+
+Das Ausführen von Blöcken hat keinen Rückgabewert.
+
+```
+Führe den Block {
+    # Anweisungen
+} aus.
+```
+
+## 6.2. if
 
 Die Schlüsselphrase für if-Statements ist `wenn <Aussage> <wahr/falsch> ist, <Anweisung>.` Zuerst wird die Aussage evaluiert und dann mit dem darauffolgenden, direkten Wert verglichen. Ergibt dies wiederum `wahr`, so wird die folgende Anweisung ausgeführt.
 
@@ -388,7 +358,7 @@ Wenn die andere Bedingung wahr ist, führe den Block {
 } aus.
 ```
 
-## 8.3 while
+## 6.3 while
 
 Die Schlüsselphrase für `while`-Schleifen ist `solange <Aussage> <wahr/falsch> ist, <Anweisung>`.  Für `do-while`-Schleifen werden Haupt- und Nebensatz einfach vertauscht. Die Überprüfung der Bedingung findet genau so statt wie bei if-Statements.
 
