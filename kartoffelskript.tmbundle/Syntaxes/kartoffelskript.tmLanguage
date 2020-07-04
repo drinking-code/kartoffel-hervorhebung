@@ -6,7 +6,6 @@
 	<array>
 		<string>kartoffel</string>
 		<string>ks</string>
-		<string>KartSkp</string>
 		<string>de</string>
 	</array>
 	<key>name</key>
@@ -15,21 +14,9 @@
 	<array>
 		<dict>
 			<key>match</key>
-			<string>(wahr|falsch)</string>
+			<string>\b(wahr|falsch)\b</string>
 			<key>name</key>
 			<string>constant.language.kartoffel</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>(nicht|und|oder)</string>
-			<key>name</key>
-			<string>keyword.operator.kartoffel</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>(mod)</string>
-			<key>name</key>
-			<string>keyword.operator.kartoffel</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -39,13 +26,11 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>storage.type.var.kartoffel</string>
+					<string>storage.modifier.kartoffel</string>
 				</dict>
 			</dict>
 			<key>end</key>
 			<string>\seine?</string>
-			<key>name</key>
-			<string>markup.other.kartoffel</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -66,19 +51,13 @@
 			<key>match</key>
 			<string>((Ganz|Gleitkomma)zahl|Zeichen(kette)?|Aussage)(-Feld)?</string>
 			<key>name</key>
-			<string>variable.parameter.kartoffel</string>
+			<string>support.constant.kartoffel</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>\.</string>
 			<key>name</key>
 			<string>punctuation.terminator.statement.kartoffel</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>#[\s\S]+</string>
-			<key>name</key>
-			<string>comment.line.kartoffel</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -99,15 +78,13 @@
 			</dict>
 			<key>end</key>
 			<string>\sauf</string>
-			<key>name</key>
-			<string>markup.other.kartoffel</string>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>match</key>
 					<string>\b(?:(?!(den|die|das))\S)+\b</string>
 					<key>name</key>
-					<string>support.variable.kartoffel</string>
+					<string>entity.other.attribute-name.kartoffel</string>
 				</dict>
 			</array>
 		</dict>
@@ -116,15 +93,19 @@
 			<string>(der|die|das|des|dem|ein)\s</string>
 			<key>end</key>
 			<string>\s</string>
-			<key>name</key>
-			<string>markup.other.kartoffel</string>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(leeres Feld|[^\s:]+)</string>
+					<string>leeres Feld</string>
 					<key>name</key>
-					<string>support.variable.kartoffel</string>
+					<string>storage.modifier.kartoffel</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(?:(?!((Ganz|Gleitkomma)zahl|Zeichen(kette)?|Aussage)(-Feld)?)[^\s:]+)+\b</string>
+					<key>name</key>
+					<string>entity.other.attribute-name.kartoffel</string>
 				</dict>
 			</array>
 		</dict>
@@ -143,15 +124,13 @@
 			<string>ausschließlich numerische Variablen</string>
 			<key>end</key>
 			<string>\sum</string>
-			<key>name</key>
-			<string>markup.other.kartoffel</string>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>match</key>
 					<string>\b(?:(?!(den|die|das))\S)+\b</string>
 					<key>name</key>
-					<string>support.variable.kartoffel</string>
+					<string>entity.other.attribute-name.kartoffel</string>
 				</dict>
 			</array>
 		</dict>
@@ -162,48 +141,309 @@
 			<string>keyword.control.kartoffel</string>
 		</dict>
 		<dict>
-			<key>match</key>
-			<string>-?\d(,\d)?</string>
-			<key>name</key>
-			<string>constant.numeric.kartoffel</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>["'][\s\S]+["']</string>
-			<key>name</key>
-			<string>constant.character.kartoffel</string>
-		</dict>
-		<dict>
 			<key>begin</key>
-			<string>[Ff]ühre den Block</string>
+			<string>([Ff]ühre den Block)\s(\{)</string>
 			<key>beginCaptures</key>
 			<dict>
-				<key>0</key>
+				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.control.kartoffel</string>
+					<string>storage.type.function.kartoffel</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.section.scope.begin.kartoffel</string>
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>aus</string>
+			<string>(\})\s(aus)</string>
 			<key>endCaptures</key>
 			<dict>
-				<key>0</key>
+				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.control.kartoffel</string>
+					<string>punctuation.section.scope.begin.kartoffel</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.function.kartoffel</string>
 				</dict>
 			</dict>
-			<key>name</key>
-			<string>markup.other.kartoffel</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>$self</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
-			<key>match</key>
-			<string>(größer als|kleiner als|größer gleich|kleiner gleich|gleich|ungleich)</string>
-			<key>name</key>
-			<string>keyword.operator.kartoffel</string>
+			<key>include</key>
+			<string>#numbers</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#strings</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#comments</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#operators</string>
 		</dict>
 	</array>
+	<key>repository</key>
+	<dict>
+		<key>comments</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>#</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.comment.kartoffel</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\n</string>
+					<key>name</key>
+					<string>comment.line.kartoffel</string>
+				</dict>
+			</array>
+		</dict>
+		<key>numbers</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>(?x)
+        				(?&lt;!\w|\$)							    # Ensure word boundry
+                        [+-]?                                   # Optional sign
+        				(?&gt;
+        					(
+        						(0|[1-9][0-9]*)(\,[0-9]*)?		# 0 or 1 or 1, or 1,0
+        					  | \,[0-9]+						# ,1
+        					)
+        					([eE][+-]?[0-9]+)?					# Exponent
+        				)
+        				(?!\w)									# Ensure word boundry
+        			</string>
+					<key>name</key>
+					<string>constant.numeric.kartoffel</string>
+				</dict>
+			</array>
+		</dict>
+		<key>operators</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>größer als|kleiner als|größer gleich|kleiner gleich|gleich|ungleich</string>
+					<key>name</key>
+					<string>keyword.operator.comparison.kartoffel</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>nicht|und|oder</string>
+					<key>name</key>
+					<string>keyword.operator.logical.kartoffel</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\:</string>
+					<key>name</key>
+					<string>keyword.operator.kartoffel</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>mod|\*|/|\-|\+</string>
+					<key>name</key>
+					<string>keyword.operator.arithmetic.kartoffel</string>
+				</dict>
+			</array>
+		</dict>
+		<key>strings</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>'</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.kartoffel</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>'</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.kartoffel</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>string.quoted.single.kartoffel</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#escapes</string>
+						</dict>
+						<dict>
+							<key>match</key>
+							<string>\\\n</string>
+							<key>name</key>
+							<string>constant.character.escape.newline.kartoffel</string>
+						</dict>
+						<dict>
+							<key>match</key>
+							<string>\n</string>
+							<key>name</key>
+							<string>invalid.illegal.character-not-allowed-here.kartoffel</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>"</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.kartoffel</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>"</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.kartoffel</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>string.quoted.double.js</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#escapes</string>
+						</dict>
+						<dict>
+							<key>match</key>
+							<string>\\\n</string>
+							<key>name</key>
+							<string>constant.character.escape.newline.kartoffel</string>
+						</dict>
+						<dict>
+							<key>match</key>
+							<string>\n</string>
+							<key>name</key>
+							<string>invalid.illegal.character-not-allowed-here.kartoffel</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+			<key>repository</key>
+			<dict>
+				<key>escapes</key>
+				<dict>
+					<key>match</key>
+					<string>\\(x\h{2}|[0-2][0-7]{0,2}|3[0-6][0-7]|37[0-7]?|[4-7][0-7]?|.)</string>
+					<key>name</key>
+					<string>constant.character.escape.kartoffel</string>
+				</dict>
+				<key>interpolation</key>
+				<dict>
+					<key>begin</key>
+					<string>\$\{</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.section.embedded.begin.kartoffel</string>
+						</dict>
+					</dict>
+					<key>contentName</key>
+					<string>source.kartoffel</string>
+					<key>end</key>
+					<string>(\})</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.section.embedded.end.kartoffel</string>
+						</dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>source.kartoffel</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.embedded.line.kartoffel</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>begin</key>
+							<string>\{</string>
+							<key>beginCaptures</key>
+							<dict>
+								<key>0</key>
+								<dict>
+									<key>name</key>
+									<string>meta.brace.curly.kartoffel</string>
+								</dict>
+							</dict>
+							<key>end</key>
+							<string>\}</string>
+							<key>endCaptures</key>
+							<dict>
+								<key>0</key>
+								<dict>
+									<key>name</key>
+									<string>meta.brace.curly.kartoffel</string>
+								</dict>
+							</dict>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>$self</string>
+								</dict>
+							</array>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>$self</string>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+		</dict>
+	</dict>
 	<key>scopeName</key>
 	<string>source.kartoffel</string>
 	<key>uuid</key>
